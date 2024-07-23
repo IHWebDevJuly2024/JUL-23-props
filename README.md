@@ -1,8 +1,20 @@
-# React + Vite
+# REACT props
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Props are a way to pass data from parent to child components. They are similar to function arguments in JavaScript.
 
-Currently, two official plugins are available:
+The data is passed like this:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```jsx
+// We are in the parent component
+<ChildComponent data={data} />
+```
+
+And received like this:
+
+```jsx
+// We are in the child component
+function ChildComponent(props) {
+  console.log(props.data);
+}
+```
+This is an excellent way to pass data in case we need to reuse the same component with different content.
